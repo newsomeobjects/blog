@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>Textarea 行后添加逗号（避免重复）</title>
+<script>
+// 当textarea失去焦点时执行函数
+function addCommas() {
+  var textarea = document.getElementById('myTextarea');
+  var text = textarea.value;
+  // 使用正则表达式来查找换行符后面紧跟的0个或多个逗号，并将它们替换成一个换行符和一个逗号   .replace(/^\s*\n/gm, '').replace(/\n\s*$/g, '').replace(/\n{2,}/g, '')
+   var newText = text.replace(/^\s+|\s+$/gm, '').replace(/\n{2,}/g, '').replace(/\n,*/g, '\n,').replace(/(\n*,+)+$/, '');
+  // 将修改后的文本设置回textarea中 
+  textarea.value = newText;
+}
+</script>
+</head>
+<body>
+
+<textarea style="width: 300px; height: 200px;" id="myTextarea" onblur="addCommas()"></textarea>
+
+</body>
+</html>
