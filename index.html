@@ -1,23 +1,32 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
+
 <head>
-<meta charset="UTF-8">
-<title>Textarea 行后添加逗号（避免重复）</title>
-<script>
-// 当textarea失去焦点时执行函数
-function addCommas() {
-  var textarea = document.getElementById('myTextarea');
-  var text = textarea.value;
-  // 使用正则表达式来查找换行符后面紧跟的0个或多个逗号，并将它们替换成一个换行符和一个逗号   .replace(/^\s*\n/gm, '').replace(/\n\s*$/g, '').replace(/\n{2,}/g, '')
-   var newText = text.replace(/^\s+|\s+$/gm, '').replace(/\n{2,}/g, '').replace(/\n,*/g, '\n,').replace(/(\n*,+)+$/, '');
-  // 将修改后的文本设置回textarea中 
-  textarea.value = newText;
-}
-</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clash配合SwitchyOmega实现分流</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
 </head>
-<body>
 
-<textarea style="width: 300px; height: 200px;" id="myTextarea" onblur="addCommas()"></textarea>
-
+<body class="stackedit">
+  <div class="stackedit__html"><p></p><div class="toc"><h3>文章目录</h3><ul><ul><li><a href="#ClashSwitchyOmega_1">Clash配合SwitchyOmega</a></li><ul><li><a href="#clash__5">clash 配置</a></li><li><a href="#Google_8">Google浏览器配置：需要安装这个插件,安装这个插件后，如此这般：</a></li><li><a href="#Edgeclash_16">Edge浏览器配置，啥都不用管，它默认走系统代理的，我们clash不要开系统代理</a></li></ul></ul></ul></div><p></p>
+<h2><a id="ClashSwitchyOmega_1"></a>Clash配合SwitchyOmega</h2>
+<blockquote>
+<p>目的 ​Edge不走代理 Google走代理</p>
+</blockquote>
+<h3><a id="clash__5"></a>clash 配置</h3>
+<p><img src="https://img-blog.csdnimg.cn/direct/0fcab81353744c09904addbe54a0a60d.png" alt="pic"></p>
+<h3><a id="Google_8"></a>Google浏览器配置：需要安装这个插件,安装这个插件后，如此这般：</h3>
+<p><img src="https://img-blog.csdnimg.cn/direct/8a91d3975621458ca0f532350da01c7a.png" alt="在这里插入图片描述"><br>
+<img src="https://img-blog.csdnimg.cn/direct/f040fab58f3a43b78444b77c7332f212.png" alt="dd"><br>
+然后使用这个模式：<br>
+<img src="https://img-blog.csdnimg.cn/direct/fbc7accf86284f6c90fcebc20b095e3e.png" alt="在这里插入图片描述"></p>
+<h3><a id="Edgeclash_16"></a>Edge浏览器配置，啥都不用管，它默认走系统代理的，我们clash不要开系统代理</h3>
+<blockquote>
+<p>这样平时查询国外资料可以使用谷歌浏览器；edge浏览器用来看国内网页啥的不费流量</p>
+</blockquote>
+<p>​</p>
+</div>
 </body>
+
 </html>
